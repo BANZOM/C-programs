@@ -23,7 +23,7 @@ char edit (char p[],int n)
         
     }
     p[first]= '\0';
-    while(p[0] == ' ')
+    while(p[0] == ' ')//for removing spacses from front
     {
         for (int i = 0; i < strlen(p); i++) {
             p[i]=p[i+1];
@@ -31,8 +31,11 @@ char edit (char p[],int n)
         }
     }
     
+    while( p[strlen(p)-1]== ' ')
+        p[strlen(p)-1]='\0';
     
-    puts(p);
+    printf("---%s---",p);
+    printf("\nThe size of array now become %d",strlen(p));
 }
 
 
@@ -43,8 +46,10 @@ int main()
     //p[] = "<h1>   Hello Aditya  </h1>";
     printf("before edit:\n");
     puts(p);
+    printf("The size of array before %d\n",strlen(p));
     printf("After edit:\n");
     n= (int) sizeof(p)/sizeof(p[0]);
+    
     edit (p,n);
     
    // printf("\n%d",n);
