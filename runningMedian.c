@@ -10,16 +10,16 @@ int main()
     {
         
         scanf("%d",&arr[i]);
-        sortarr( arr, i);
-        if(i%2 == 0)
+        sortarr( arr, i+1);
+        if((i+1)%2 == 0)
         {
-            mid= ( arr[(i+1)/2]+arr[((i+1)/2)+1] ) /2;
+            mid= ( arr[(i)/2]+arr[((i)/2)+1] ) /2.0;
         }
         else
             mid= arr[i/2];
             
         
-        printf("mid is %.1f \n ", mid);
+        printf("mid is %.1f \n", mid);
         
     }
 
@@ -28,5 +28,19 @@ int main()
 
 void sortarr( int arr[], int n )
 {
+    int temp;
+    for (int i = 0; i < n ; i++) {
+
+        for (int j = 0; j < n-1-i; j++) {
+           
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
     
 }
+
