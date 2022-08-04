@@ -16,12 +16,14 @@ int main()
     while( c != EOF)
     {
         fputc(c, f2);
+        fprintf(f2," ");
         fputc(c,f2);
         
         c= fgetc(f1);
     }
     
-    fclose(f1,f2);
+    fclose(f1);
+    fclose(f2);
     
     printf("DONE");
     
