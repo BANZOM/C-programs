@@ -1,3 +1,9 @@
+/*
+    For printing the employee name and the salary management basic tool;
+
+    for more employees
+    change the for loop statement to " for(int i = 0; i< {number of employees} ; i++ "
+*/
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
