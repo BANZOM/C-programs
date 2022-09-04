@@ -17,6 +17,7 @@ int main()
         printf("%c",alpha);
         alpha = getc(F);
     }
+    fclose(F);
 
     return 0;
 }
