@@ -1,6 +1,6 @@
 /******************************************************************************
 
-C PROGRAM that DELETING DURING EXECUTION
+C PROGRAM that DELETE DURING EXECUTION
 
 *******************************************************************************/
 #include <stdio.h>
