@@ -14,7 +14,7 @@ int main()
     while (n!=0)
       { 
         terms=terms+1;  //check number of terms
-        n=n/1010;
+        n=n/10;
       }
     while (temp1!=0)
       {
