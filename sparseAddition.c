@@ -3,17 +3,14 @@
 
 int LinearSearch(int element, int arr[], int n)
 {
-    int found = 0;
-
     for (int i = 0; i < n; i++)
     {
         if (arr[i] == element)
         {
-            found = 1;
+            return 1;
         }
     }
-
-    return found;
+    return 0;
 }
 int main()
 {
@@ -34,18 +31,20 @@ int main()
     }
 
     // creating a sparse matrix 1 from triples 1;
-    int colFound, rowFound;
+    int colFound, rowFound, elementFound, index;
 
     for (int i = 0; i < rows1; i++)
     {
         for (int j = 0; j < cols1; j++)
         {
             rowFound = LinearSearch(i, spRow1, trip1);
-            colFound = LinearSearch(j, spcol1, trip1);
+            colFound = LinearSearch(j, spCol1, trip1);
 
             if (colFound && rowFound)
             {
-                sparse1[i][j] = ;
+                index = ;
+                elementFound = spVal1[index];
+                sparse1[i][j] = elementFound;
             }
             else
             {
