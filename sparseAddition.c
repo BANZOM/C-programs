@@ -1,5 +1,6 @@
 #include <stdio.h>
 // Program to implement sparse matrix addition using arrays in c
+
 int main()
 {
     int rows1, cols1, trip1;
@@ -10,12 +11,22 @@ int main()
     scanf("%d", &trip1);
 
     int sparse1[rows1][cols1];
-    int spRow1[trip1], spCol1[trip1], spVal1[trip1];
+    int spInput[trip1][3];
 
-    for (int i = 0, k = 0; i < trip1; i++, k++)
+    for (int i = 0; i < trip1; i++)
     {
         printf("Enter the triples(row,column,value): ");
-        scanf("%d %d %d", &spRow1[k], &spCol1[k], &spVal1[k]);
+        scanf("%d %d %d", &spInput[i][0], &spInput[i][1], &spInput[i][2]);
+    }
+
+    // creating a sparse matrix 1 from triples 1;
+    for (int i = 0; i < rows1; i++)
+    {
+        for (int j = 0; j < cols1; j++)
+        {
+            // if (i ==)
+            // sparse1[i][j] =
+        }
     }
 
     // entry for second array
