@@ -24,8 +24,8 @@ int main()
     {
         for (int j = 0; j < cols1; j++)
         {
-            // if (i ==)
-            // sparse1[i][j] =
+
+            sparse1[i][j] =
         }
     }
 
