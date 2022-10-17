@@ -17,12 +17,33 @@ NODE createNode()
     temp->next = NULL;
     return temp;
 }
+
+void createList(int length)
+{
+    if (length == 0)
+    {
+        printf("Length must be greater than zero. PROGRAM EXIT");
+        exit(0);
+    }
+    else
+    {
+        int num;
+        NODE ptr = head, newNode = createNode();
+        for (int i = 0; i < length; i++)
+        {
+            scanf("%d", &num);
+            newNode->data = num;
+            ptr = newNode;
+        }
+    }
+}
+
 int main()
 {
-    int lenghtOfList;
+    int lengthOfList;
     printf("Enter the no. of nodes: ");
     scanf("%d", &lengthOfList);
     printf("Enter the data: ");
-
+    createList(lengthOfList);
     return 0;
 }
