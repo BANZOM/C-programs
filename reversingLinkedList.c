@@ -28,12 +28,13 @@ void createList(int length)
     else
     {
         int num;
-        NODE ptr = head, newNode = createNode();
+        NODE ptr = head;
         for (int i = 0; i < length; i++)
         {
+            NODE newNode = createNode();
             scanf("%d", &num);
+            ptr->next = newNode;
             newNode->data = num;
-            ptr = newNode;
         }
     }
 }
