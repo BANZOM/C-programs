@@ -19,6 +19,10 @@ NODE createNode()
 }
 int main()
 {
+    int lenghtOfList;
+    printf("Enter the no. of nodes: ");
+    scanf("%d", &lengthOfList);
+    printf("Enter the data: ");
 
     return 0;
 }
