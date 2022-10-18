@@ -42,10 +42,26 @@ void createList(int length)
     }
 }
 
+void reverse()
+{
+    NODE prev = NULL;
+    NODE current = head;
+    NODE next;
+    while (current != NULL)
+    {
+        next = current->next;
+
+        current->next = prev;
+
+        prev = current;
+        current = next;
+    }
+    head = prev;
+}
 void traverse()
 {
     NODE ptr = head;
-    while (ptr->next != NULL)
+    while (ptr != NULL)
     {
         printf("%d------>>", ptr->data);
         ptr = ptr->next;
@@ -60,6 +76,7 @@ int main()
     scanf("%d", &lengthOfList);
     printf("Enter the data: ");
     createList(lengthOfList);
+    reverse();
     traverse();
     return 0;
 }
