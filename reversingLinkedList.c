@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
 #include <stdlib.h>
 
 struct node
@@ -36,7 +34,8 @@ void createList(int length)
         {
             scanf("%d", &num);
             ptr->data = num;
-            ptr->next = createNode();
+            if (i + 1 < length)
+                ptr->next = createNode();
             ptr = ptr->next;
         }
     }
@@ -63,10 +62,10 @@ void traverse()
     NODE ptr = head;
     while (ptr != NULL)
     {
-        printf("%d------>>", ptr->data);
+        printf("%d ", ptr->data);
         ptr = ptr->next;
     }
-    printf("NULL");
+    // printf("NULL");
 }
 
 int main()
