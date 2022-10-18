@@ -7,8 +7,10 @@ struct node
 {
     int data;
     struct node *next;
-} * head;
+};
 typedef struct node *NODE;
+
+NODE head = NULL;
 
 NODE createNode()
 {
@@ -28,15 +30,27 @@ void createList(int length)
     else
     {
         int num;
-        NODE ptr = head;
+        NODE ptr = createNode();
+        head = ptr;
         for (int i = 0; i < length; i++)
         {
-            NODE newNode = createNode();
             scanf("%d", &num);
-            ptr->next = newNode;
-            newNode->data = num;
+            ptr->data = num;
+            ptr->next = createNode();
+            ptr = ptr->next;
         }
     }
+}
+
+void traverse()
+{
+    NODE ptr = head;
+    while (ptr->next != NULL)
+    {
+        printf("%d------>>", ptr->data);
+        ptr = ptr->next;
+    }
+    printf("NULL");
 }
 
 int main()
@@ -46,5 +60,6 @@ int main()
     scanf("%d", &lengthOfList);
     printf("Enter the data: ");
     createList(lengthOfList);
+    traverse();
     return 0;
 }
