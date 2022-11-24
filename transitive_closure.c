@@ -18,12 +18,30 @@ int main(int argc, char const *argv[])
     // logic of the transitive closure
     for (int iteration = 0; iteration < n; iteration++)
     {
-        
-        
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i][iteration])
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (a[iteration][j])
+                    {
+                        a[i][j] = 1;
+                    }
+                }
+            }
+        }
     }
-    
-    
 
-
+    // print the final answer
+    printf("The final answer is as follows:\n");
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
