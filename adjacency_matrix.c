@@ -17,4 +17,21 @@ void main()
             scanf("%d", &a[i][j]);
         }
     }
+
+    // logic for printing the relation
+    printf("The relation is as follows:\n");
+    printf("{");
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (a[i][j])
+            {
+                printf("(%c,%c)", alpha[i], alpha[j]);
+                if (i + 1 <= n || j + 1 <= n)
+                    printf(",");
+            }
+        }
+    }
+    printf("}\n");
 }
