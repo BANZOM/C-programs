@@ -58,7 +58,7 @@ void main()
             for (int k = j + 1; k < n_powerSet - 1; k++)
             {
                 // printf("**%d,%d,%d", powerSet[k][0], powerSet[k][1], powerSet[k][2]);
-                for (int m = k+1; m < n_powerSet - 1; m++)
+                for (int m = k + 1; m < n_powerSet - 1; m++)
                 {
                     ref[0] = (powerSet[j][0] + powerSet[k][0] + powerSet[m][0]);
                     ref[1] = (powerSet[j][1] + powerSet[k][1] + powerSet[m][1]);
@@ -67,6 +67,20 @@ void main()
                     {
                         printf("%d,%d,%d\n", ref[0], ref[1], ref[2]);
                     }
+                }
+            }
+        }
+        for (int j = i + 1; j < n_powerSet - 1; j++)
+        {
+            // printf("**%d,%d,%d",powerSet[j][0],powerSet[j][1],powerSet[j][2]);
+            for (int k = j + 1; k < n_powerSet - 1; k++)
+            {
+                ref[0] = powerSet[j][0] + powerSet[k][0];
+                ref[1] = powerSet[j][1] + powerSet[k][1];
+                ref[2] = powerSet[j][2] + powerSet[k][2];
+                if ((powerSet[j][0] + powerSet[k][0]) == set[0] && (powerSet[j][1] + powerSet[k][1]) == set[1] && (powerSet[j][2] + powerSet[k][2]) == set[2])
+                {
+                    printf("%d,%d,%d\n", ref[0], ref[1], ref[2]);
                 }
             }
         }
