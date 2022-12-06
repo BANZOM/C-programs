@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define MAX_WALL_SIZE 50000
 
 int count = 0;
@@ -8,7 +9,7 @@ int right_traverse(int wall[], int start, int end, int key)
     int s = start, e = end;
     while (s != e + 1 && s != MAX_WALL_SIZE)
     {
-        if (wall[s] == key)
+        if (s == key)
             return s;
         if (s == start)
             count++;
@@ -26,7 +27,7 @@ int left_traverse(int wall[], int start, int end, int key)
     int s = start, e = end;
     while (s != e - 1 && s != 0)
     {
-        if (wall[s] == key)
+        if (s == key)
         {
             return s;
         }
@@ -46,12 +47,13 @@ int main(int argc, char const *argv[])
     int wall[MAX_WALL_SIZE];
     int key, index, manPosition;
 
-    printf("Enter the gate name (any integer): ");
-    scanf("%d", &key);
-
-    printf("Enter the index where to place that gate in the wall (under %d): ", MAX_WALL_SIZE);
-    scanf("%d", &index);
-    wall[index] = key;
+    // printf("Enter the gate name (any integer): ");
+    // scanf("%d", &key);
+    index = rand() % 50000 + 1; 
+    // printf("\nEnter the index where to place that gate in the wall (under %d): ", MAX_WALL_SIZE);
+    // scanf("%d", &index);
+    // wall[index] = index;
+    printf("\n**%d**\n",index);
 
     // printf("**%d\n%d\n%d**\n", wall[index],index,wall[index+1]);
 
@@ -59,7 +61,7 @@ int main(int argc, char const *argv[])
     scanf("%d", &manPosition);
 
     int ans;
-    ans = right_traverse(wall, manPosition, manPosition+1, key);
+    ans = right_traverse(wall, manPosition, manPosition+1, index);
 
     if (ans != -1)
     {
