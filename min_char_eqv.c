@@ -2,12 +2,21 @@
 
 long int smallestNum(char *str)
 {
-    int nums[100] = {0}, n=0,i=0;
+    int nums[100] = {0}, n=0,i=0,count = 0;
     while (*str != '\0')
     {
-        char c = *str;
-        printf("%c\n", c);
+        // printf("%c\n", c);
+        count = 0;
+        while (*str != 'I' && *str != '\0')
+        {
+            // char c = *str;
+            // printf("%c\n", c);
 
+            count++;
+            str++;
+        }
+        
+        printf("%d*\n",count);
         
         str++;
     }
