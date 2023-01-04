@@ -11,7 +11,8 @@ int main()
     char *tree;
     printf("Enter the number of nodes: ");
     scanf("%d", &n);
-    tree = calloc(n, sizeof(char));
+    tree = (char *)malloc(n*sizeof(char));
+
     for (int i = 0; i < n; i++)
     {
         scanf(" %c", tree + i);
