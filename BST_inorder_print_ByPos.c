@@ -26,9 +26,10 @@ void iOT(int *a, int indx, int n, int *inorder)
 
 int main()
 {
-    int n;     // num of nodes
+    int n;  // num of nodes
+    int pos; // which pos to print of inorder
     int *tree, *inorder;
-    
+
     printf("Enter the number of nodes: ");
     scanf("%d", &n);
 
@@ -44,11 +45,14 @@ int main()
     }
 
     // inorder traversal and store into array 'inorder'
-    iOT(tree, 0, n, inorder); 
+    iOT(tree, 0, n, inorder);
 
-    print(inorder, c);
-    
-    printf("\n");
+    // print(inorder, c); // for troubleshoot
+
+    printf("Enter the position to print: ");
+    scanf("%d", &pos);
+    printf("%d\n", inorder[pos - 1]);
+
     free(tree);
     free(inorder);
     return 0;
