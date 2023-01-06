@@ -5,6 +5,8 @@ void print(int *a, int n)
     for (int i = 0; i < n; i++)
         printf("%d ", *(a + i));
 }
+
+// inoder traversal in arrays
 void iOT(int *a, int indx)
 {
     if (*(a + indx) == -9)
@@ -21,23 +23,24 @@ void iOT(int *a, int indx)
 int main()
 {
     int n;
-    int *tree, *inorder;
+    // int *tree, *inorder;
     printf("Enter the number of nodes: ");
     scanf("%d", &n);
 
     // memory allocation
-    tree = malloc(n * sizeof(int));
-    inorder = calloc(n, sizeof(int));
+    // tree = malloc(n * sizeof(int));
+    // inorder = calloc(n, sizeof(int));
+    int tree[n],inorder[n];
 
     printf("Enter the data in BST order: ");
     // read
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", tree + i); // -9 for NULL
+        scanf("%d",&tree[i]); // -9 for NULL
     }
 
-    iOT(tree,0);
-    // print(tree, n);
+    // iOT(tree,0);
+    print(tree, n);
 
     printf("\n");
     return 0;
