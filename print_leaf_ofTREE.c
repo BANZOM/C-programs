@@ -35,12 +35,13 @@ int main()
     int tree[1000] = {0}, n;
     printf("TREE IS IN ARRAY REPRESENTATION\nEnter number of data to be store: ");
     scanf("%d", &n);
-    printf("Enter the elements of tree (-9 for NULL): ");
+    printf("Enter the input (0 for NULL): ");
 
     for (int i = 0; i < n; i++)
         scanf("%d", &tree[i]);
 
     printf("The Leaves of tree are: ");
     printLeaves(tree, n, 0);
+    printf("\n");
     return 0;
 }
