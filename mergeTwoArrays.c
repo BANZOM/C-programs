@@ -2,6 +2,21 @@
 
 #include <stdio.h>
 
+void merge(int a[], int m, int b[], int n) {
+  int i, j;
+  // merging b into a
+  for (j = 0; j < n; j++) {
+    for (i = 0; i < m; i++)
+      if (b[j] < a[i])
+        break;
+
+    rightShift(a, i, m);
+
+    a[i] = b[j];
+    m++;
+  }
+}
+
 int main() {
   int m, n, a[100], b[100];
   scanf("%d%d", &m, &n);
