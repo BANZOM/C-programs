@@ -5,11 +5,27 @@
 // Move zeros to back
 
 #include <stdio.h>
+
 void print(int a[], int n) {
   for (int i = 0; i < n; i++)
     printf("%d ", a[i]);
   printf("\n");
 }
+
+void moveZeros(int a[], int n) {
+  int numZero = 0;
+  int signal = 0;
+  for (int i = 0; i < n; i++) {
+    if (a[i] != 0) {
+      a[signal++] = a[i];
+    }
+  }
+  // printf("%d\n",signal);
+  for (int i = signal; i < n; i++) {
+    a[i] = 0;
+  }
+}
+
 int main() {
   int n;
   scanf("%d", &n);
