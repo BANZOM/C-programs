@@ -8,19 +8,19 @@
 
 int main(void) {
   int n;
-  n = 5;
-  int arr[5];
+  scanf("%d",&n);
   
+  int arr[n];
    for (int i = 0; i < n; i++)
     scanf("%d", &arr[i]);
 
-  int map[6] = {0};
+  int map[10] = {0};
 
   for (int i = 0; i < n; i++) {
     map[arr[i] - 1] = 1;
   }
 
-  for (int i = 0; i < 6; i++)
+  for (int i = 0; i < n+1; i++)
     if (map[i] == 0) {
       printf("%d\n", i + 1);
       break;
