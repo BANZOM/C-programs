@@ -11,4 +11,19 @@ int main(void) {
   n = 5;
   int arr[5];
   
+   for (int i = 0; i < n; i++)
+    scanf("%d", &arr[i]);
+
+  int map[6] = {0};
+
+  for (int i = 0; i < n; i++) {
+    map[arr[i] - 1] = 1;
+  }
+
+  for (int i = 0; i < 6; i++)
+    if (map[i] == 0) {
+      printf("%d\n", i + 1);
+      break;
+    }
+  return 0;
 }
