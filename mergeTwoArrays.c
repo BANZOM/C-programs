@@ -2,6 +2,11 @@
 
 #include <stdio.h>
 
+void rightShift(int a[], int m, int n) {
+  for (int i = n; i >= m; i--)
+    a[i + 1] = a[i];
+}
+
 void merge(int a[], int m, int b[], int n) {
   int i, j;
   // merging b into a
