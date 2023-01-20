@@ -3,3 +3,12 @@
 
 // Input:  1 4 2 6 5
 // Output: 3
+
+#include <stdio.h>
+
+int main(void) {
+  int n;
+  n = 5;
+  int arr[5];
+  
+}
