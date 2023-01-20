@@ -5,7 +5,11 @@
 // Move zeros to back
 
 #include <stdio.h>
-
+void print(int a[], int n) {
+  for (int i = 0; i < n; i++)
+    printf("%d ", a[i]);
+  printf("\n");
+}
 int main() {
   int n;
   scanf("%d", &n);
