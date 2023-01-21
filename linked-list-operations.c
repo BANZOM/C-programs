@@ -72,7 +72,20 @@ int findLen(){
   return len
 }
 
-void insertAtLast() { }
+void insertAtLast() { 
+  NODE new = create_node();
+  
+  NODE nd = head;
+  if (head == NULL) {
+    head = new;
+    return;
+  }
+
+  while (nd->next) {
+    nd = nd->next;
+  }
+  nd->next = new;
+}
 void deleteFromLast(){ }
 void insertAfterPosition() { }
 void deleteAtPosition() { }
