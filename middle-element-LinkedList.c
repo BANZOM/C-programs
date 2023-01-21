@@ -67,13 +67,14 @@ int findLen(NODE head)
     return len;
 }
 
-int findMiddle(NODE head){
+int findMiddle(NODE head)
+{
     NODE nd = head;
     int len = findLen(head);
-    int middle = len/2;
-    if(len%2!=0)
-        middle = middle+1;
-    
+    int middle = len / 2;
+    if (len % 2 != 0)
+        middle = middle + 1;
+
     // printf("Middle element is at position: %d\n\n", middle);
 
     for (int i = 1; i < middle; i++)
