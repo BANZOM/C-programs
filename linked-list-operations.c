@@ -35,7 +35,17 @@ NODE insertAtBeg(){
   head = new;
 }
 
-NODE deleteFromBeg(){ }
+NODE deleteFromBeg(){
+  struct node *temp;
+  if (head == NULL) {
+    printf("Nothing to delete, List is empty.\n");
+    return;
+  }
+  temp = head;
+  head = head->next;
+  free(temp);
+}
+
 NODE traverse(){ }
 int findLen(){ }
 NODE insertAtLast() { }
