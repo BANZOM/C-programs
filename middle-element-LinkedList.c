@@ -19,7 +19,36 @@ NODE createNode(int data)
     return node;
 }
 
+NODE insertAtLast(NODE head, int data)
+{
+    NODE new = create_node(data);
+    NODE nd = head;
+    if (head == NULL)
+    {
+        return new;
+        ;
+    }
+
+    while (nd->next)
+    {
+        nd = nd->next;
+    }
+    nd->next = new;
+}
+
 int main(void)
 {
     NODE head = NULL;
+    // input format: enter numbers and enter -1 to stop;
+    printf("Enter the data: ");
+    int data;
+    while (1)
+    {
+        scanf("%d", &data);
+        if (data == -1)
+            break;
+        head = insertAtLast(head, data);
+    }
+
+    return 0;
 }
