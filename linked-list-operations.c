@@ -21,6 +21,15 @@ struct node {
 typedef struct node *NODE;
 NODE head = NULL;
 
+NODE insertAtBeg(){ }
+NODE deleteFromBeg(){ }
+NODE traverse(){ }
+int findLen(){ }
+NODE insertAtLast() { }
+NODE deleteFromLast(){ }
+NODE insertAfterPosition() { }
+NODE deleteAtPosition() { }
+
 int main(void) {
   int choice;
   
@@ -34,7 +43,7 @@ int main(void) {
       printf("Quitting\n");
       exit(0);
     case 1:
-      insertAtbeg();
+      insertAtBeg();
       break;
     case 2:
       deleteFromBeg();
@@ -61,5 +70,5 @@ int main(void) {
       printf("Wrong Input, Enter 0 to exit.\n\n");
   }
   } while (1);
-  
+  return 0;
 }
