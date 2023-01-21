@@ -29,7 +29,12 @@ NODE create_node() {
   return new;
 }
 
-NODE insertAtBeg(){ }
+NODE insertAtBeg(){
+  NODE new = create_node();
+  new->next = head;
+  head = new;
+}
+
 NODE deleteFromBeg(){ }
 NODE traverse(){ }
 int findLen(){ }
