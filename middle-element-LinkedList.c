@@ -67,6 +67,23 @@ int findLen(NODE head)
     return len;
 }
 
+int findMiddle(NODE head){
+    NODE nd = head;
+    int len = findLen(head);
+    int middle = len/2;
+    if(len%2!=0)
+        middle = middle+1;
+    
+    // printf("Middle element is at position: %d\n\n", middle);
+
+    for (int i = 1; i < middle; i++)
+    {
+        nd = nd->next;
+    }
+
+    return nd->data;
+}
+
 int main(void)
 {
     NODE head = NULL;
@@ -85,10 +102,11 @@ int main(void)
     printf("The List is : ");
     traverse(head);
     printf("\n");
-    int len = findLen(head);
-    printf("The length of the list is: %d\n\n", len);
+    printf("The Middle element in the list is %d.\n\n", findMiddle(head));
+    // int len = findLen(head);
+    // printf("The length of the list is: %d\n\n", len);
 
-    printf("Middle element is at position: %d\n\n", len/2);
+    // printf("Middle element is at position: %d\n\n", len/2);
 
     return 0;
 }
