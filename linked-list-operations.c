@@ -69,7 +69,7 @@ int findLen(){
     len++;
     nd = nd->next;
   }
-  return len
+  return len;
 }
 
 void insertAtLast() { 
