@@ -26,7 +26,6 @@ NODE insertAtLast(NODE head, int data)
     if (head == NULL)
     {
         return new;
-        ;
     }
 
     while (nd->next)
@@ -34,6 +33,8 @@ NODE insertAtLast(NODE head, int data)
         nd = nd->next;
     }
     nd->next = new;
+
+    return head;
 }
 
 int main(void)
