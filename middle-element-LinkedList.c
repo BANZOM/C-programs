@@ -52,6 +52,21 @@ void traverse(NODE head)
     }
 }
 
+int findLen(NODE head)
+{
+    NODE nd = head;
+    int len = 1;
+    if (head == NULL)
+        return 0;
+
+    while (nd->next)
+    {
+        len++;
+        nd = nd->next;
+    }
+    return len;
+}
+
 int main(void)
 {
     NODE head = NULL;
@@ -70,6 +85,10 @@ int main(void)
     printf("The List is : ");
     traverse(head);
     printf("\n");
+    int len = findLen(head);
+    printf("The length of the list is: %d\n\n", len);
+
+    printf("Middle element is at position: %d\n\n", len/2);
 
     return 0;
 }
