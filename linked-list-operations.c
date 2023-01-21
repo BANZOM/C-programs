@@ -134,7 +134,29 @@ void insertAfterPosition() {
   new->next = current->next;
   current->next = new;
 }
-void deleteAtPosition() { }
+
+void deleteAtPosition() {
+  int pos;
+  NODE ptr = head, target;
+  printf("Enter the position: ");
+  scanf("%d", &pos);
+
+  if (pos > findLen() || head == NULL) {
+    printf("Cannot delete\n");
+    return;
+  }
+  if (pos == 0) {
+    deleteFromBeg();
+    return;
+  }
+
+  for (int i = 0; i < pos - 1 && ptr->next != NULL; i++) {
+    ptr = ptr->next;
+  }
+  target = ptr->next;
+  ptr->next = ptr->next->next;
+  free(target);
+}
 
 int main(void) {
   int choice;
