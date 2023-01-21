@@ -59,7 +59,19 @@ void traverse(){
   }
 }
 
-int findLen(){ }
+int findLen(){
+ NODE nd = head;
+  int len = 1;
+  if (head == NULL)
+    return 0;
+
+  while (nd->next) {
+    len++;
+    nd = nd->next;
+  }
+  return len
+}
+
 void insertAtLast() { }
 void deleteFromLast(){ }
 void insertAfterPosition() { }
