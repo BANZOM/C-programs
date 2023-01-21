@@ -21,7 +21,7 @@ NODE createNode(int data)
 
 NODE insertAtLast(NODE head, int data)
 {
-    NODE new = create_node(data);
+    NODE new = createNode(data);
     NODE nd = head;
     if (head == NULL)
     {
@@ -35,6 +35,21 @@ NODE insertAtLast(NODE head, int data)
     nd->next = new;
 
     return head;
+}
+void traverse(NODE head)
+{
+    if (head == NULL)
+        printf("List is empty\n");
+    else
+    {
+        NODE nd = head;
+        while (nd)
+        {
+            printf("%d->", nd->data);
+            nd = nd->next;
+        }
+        printf("NULL\n");
+    }
 }
 
 int main(void)
@@ -50,6 +65,11 @@ int main(void)
             break;
         head = insertAtLast(head, data);
     }
+
+    printf("\n");
+    printf("The List is : ");
+    traverse(head);
+    printf("\n");
 
     return 0;
 }
