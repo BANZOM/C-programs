@@ -21,7 +21,7 @@ struct node {
 typedef struct node *NODE;
 NODE head = NULL;
 
-void create_node() {
+NODE create_node() {
   NODE new = (NODE)malloc(sizeof(struct node));
   printf("Enter the data: ");
   scanf("%d",&new->data);
