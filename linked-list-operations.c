@@ -106,7 +106,34 @@ void deleteFromLast(){
   }
 }
 
-void insertAfterPosition() { }
+void insertAfterPosition() {
+  int pos;
+  NODE new = create_node();
+
+  printf("Enter the position: ");
+  scanf("%d", &pos);
+  if (pos > findLen()) {
+    printf("Cannot add\n");
+    return;
+  }
+
+  if (pos == 0) {
+    new->next = head;
+    head = new;
+    return;
+  }
+  if (head == NULL) {
+    head = new;
+    return;
+  }
+
+  NODE current = head;
+  for (int i = 0; i < pos - 1 && current->next != NULL; i++) {
+    current = current->next;
+  }
+  new->next = current->next;
+  current->next = new;
+}
 void deleteAtPosition() { }
 
 int main(void) {
