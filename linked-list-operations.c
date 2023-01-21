@@ -21,6 +21,14 @@ struct node {
 typedef struct node *NODE;
 NODE head = NULL;
 
+NODE create_node() {
+  NODE new = (NODE)malloc(sizeof(struct node));
+  printf("Enter the data: ");
+  scanf("%d",&new->data);
+  new->next = NULL;
+  return new;
+}
+
 NODE insertAtBeg(){ }
 NODE deleteFromBeg(){ }
 NODE traverse(){ }
