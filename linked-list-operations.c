@@ -86,7 +86,26 @@ void insertAtLast() {
   }
   nd->next = new;
 }
-void deleteFromLast(){ }
+
+void deleteFromLast(){ 
+  NODE nd = head, target = head;
+  if (head == NULL)
+    printf("Nothind to delete\n");
+  else if (head->next == NULL) {
+    target = head;
+    head = NULL;
+    free(target);
+  } else {
+    while (nd->next->next != NULL) {
+      nd = nd->next;
+      target = nd;
+    }
+    nd = target->next;
+    target->next = NULL;
+    free(nd);
+  }
+}
+
 void insertAfterPosition() { }
 void deleteAtPosition() { }
 
