@@ -21,7 +21,7 @@ struct node {
 typedef struct node *NODE;
 NODE head = NULL;
 
-NODE create_node() {
+void create_node() {
   NODE new = (NODE)malloc(sizeof(struct node));
   printf("Enter the data: ");
   scanf("%d",&new->data);
@@ -29,13 +29,13 @@ NODE create_node() {
   return new;
 }
 
-NODE insertAtBeg(){
+void insertAtBeg(){
   NODE new = create_node();
   new->next = head;
   head = new;
 }
 
-NODE deleteFromBeg(){
+void deleteFromBeg(){
   struct node *temp;
   if (head == NULL) {
     printf("Nothing to delete, List is empty.\n");
@@ -46,12 +46,24 @@ NODE deleteFromBeg(){
   free(temp);
 }
 
-NODE traverse(){ }
+void traverse(){
+  if (head == NULL)
+    printf("List is empty\n");
+  else {
+    NODE nd = head;
+    while (nd) {
+      printf("%d->", nd->data);
+      nd = nd->next;
+    }
+    printf("NULL\n");
+  }
+}
+
 int findLen(){ }
-NODE insertAtLast() { }
-NODE deleteFromLast(){ }
-NODE insertAfterPosition() { }
-NODE deleteAtPosition() { }
+void insertAtLast() { }
+void deleteFromLast(){ }
+void insertAfterPosition() { }
+void deleteAtPosition() { }
 
 int main(void) {
   int choice;
