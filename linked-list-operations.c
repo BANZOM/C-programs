@@ -21,4 +21,7 @@ struct node {
 typedef struct node *NODE;
 NODE head = NULL;
 
-
+int main(void) {
+  int choice;
+  printf(" ");
+}
