@@ -24,6 +24,7 @@ NODE head = NULL;
 int main(void) {
   int choice;
   
+  do {
   printf("Functions:\n1. Insertion from beginning\n2. Deletion from Beginning\n3. Traversing the list\n4. Finding length of the list\n5. Insert at last\n6. Delete from last\n7. Insert after position\n8. Delete at position\n0. Exit\n");
   printf("Choose and input any one option: ");
   scanf("%d",&choice);
@@ -59,4 +60,6 @@ int main(void) {
     default:
       printf("Wrong Input, Enter 0 to exit.\n\n");
   }
+  } while (1);
+  
 }
