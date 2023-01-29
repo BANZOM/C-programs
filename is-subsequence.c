@@ -15,6 +15,8 @@ Output: false
 
 */
 
+// T.C O(N)
+
 // here's the function in C
 bool isSubsequence(char * s, char * t){
         int str1 = strlen(s);
