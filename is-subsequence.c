@@ -14,3 +14,22 @@ Input: s = "axc", t = "ahbgdc"
 Output: false
 
 */
+
+// here's the function in C
+bool isSubsequence(char * s, char * t){
+        int str1 = strlen(s);
+        int i=0;
+        int j=0;
+
+        while(*(t+j) != '\0')
+        {
+            if(*(t+j) == *(s+i))
+                i++;
+
+            j++;
+        }
+
+        if(i==str1)
+            return 1;
+        return 0;
+}
