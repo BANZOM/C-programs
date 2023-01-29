@@ -4,3 +4,24 @@
 
 // Input: s = "egg", t = "add"
 // Output: true
+
+
+// This is a C function:
+
+bool isIsomorphic(char * s, char * t){
+    int mapS[256]= {0};
+    int mapT[256]= {0};
+
+    int i=0;
+
+    while(*(s+i) != '\0')
+    {
+        if( mapS[s[i]] != mapT[t[i]])
+            return 0;
+        mapT[t[i]] = mapS[s[i]] = i+1;
+        i++;
+    }
+
+    return 1;
+
+}
