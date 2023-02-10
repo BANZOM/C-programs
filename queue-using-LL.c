@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct queue
+{
+    int data;
+    struct queue *next;
+};
+
+struct queue *create_queue(int element)
+{
+    struct queue *new = (struct queue *)malloc(sizeof(struct queue));
+    new->data = element;
+    new->next = NULL;
+    return new;
+}
+
 void enqueue() {}
 void dequeue() {}
 void traverse() {}
