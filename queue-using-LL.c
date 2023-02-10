@@ -38,7 +38,23 @@ void enqueue()
         rear = new;
     }
 }
-void dequeue() {}
+void dequeue()
+{
+    if (front == NULL)
+    {
+        printf("Queue is empty.\n");
+        return;
+    }
+    else
+    {
+        struct queue *temp = front;
+        printf("Dequeued element is: %d\n", front->data);
+        front = front->next;
+        if(front == NULL)
+            rear = NULL;
+        free(temp);
+    }
+}
 void traverse()
 {
     if (front == NULL)
