@@ -7,17 +7,56 @@ struct queue
     struct queue *next;
 };
 
+struct queue *front = NULL, *rear = NULL;
 struct queue *create_queue(int element)
 {
     struct queue *new = (struct queue *)malloc(sizeof(struct queue));
+    if (new == NULL)
+    {
+        printf("Cannot Locate memory. Exiting.....\n");
+        exit(0);
+    }
     new->data = element;
     new->next = NULL;
     return new;
 }
 
-void enqueue() {}
+void enqueue()
+{
+    printf("Enter the element to be enqueued: ");
+    int element;
+    scanf("%d", &element);
+    struct queue *new = create_queue(element);
+
+    if (rear == NULL)
+    {
+        front = rear = new;
+    }
+    else
+    {
+        rear->next = new;
+        rear = new;
+    }
+}
 void dequeue() {}
-void traverse() {}
+void traverse()
+{
+    if (front == NULL)
+    {
+        printf("Queue is empty.\n");
+    }
+    else
+    {
+        struct queue *ptr = front;
+        printf("Front --> ");
+        while (ptr != NULL)
+        {
+            printf("%d ", ptr->data);
+            ptr = ptr->next;
+        }
+        printf("<-- Rear\n");
+    }
+}
 
 int main()
 {
